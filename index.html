@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Wheather Chat</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a href="#" class="sort-by-date">Sort By Date</a></li>
+          <li><a href="#" class="sort-by-temp">Sort By Temprature</a></li> 
+          <li><a href="#" class="sort-by-city">Sort By City</a></li> 
+        </ul>
+      </div>
+    </nav>  
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="page-header">
+              <h1>Weather Chat</h1>
+              <div class="input-group">
+                <input type="text" id="city-input" class="form-control" placeholder="Search for city...">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary search-btn" type="button">Get Temp</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo">
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="respons-block">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+    <script id="weather-response-template" type="text/x-handlebars-template">
+
+        <div class="weather-frame" data-id="{{id}}">
+          <a href="#" class="remove"><i class="fa fa-trash-o fa-lg pull-right" aria-hidden="true"></i></a>
+          <h2>Weather in: {{city}}</h2>
+          <h3>{{temp}}&#8451 - {{description}} <img src="{{iconUrl}}" /></h3>
+          <p>Min:{{minTemp}}&#8451/Max:{{maxTemp}}&#8451  -  {{dateTime}}</p>
+          <div class="comments-block">
+            {{#each comments}}
+            <p>Comment: {{comment}}</p>
+            {{/each}}
+            <div class="input-group">
+              <input type="text" class="form-control comment" placeholder="Add comment here...">
+              <span class="input-group-btn">
+                <button class="btn btn-success comment-btn" type="button">Comment</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      
+    </script>
+
+    <script type="text/javascript" src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/Minimal-jQuery-Loading-Overlay-Spinner-Plugin-Easy-Overlay/jquery.easy-overlay.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

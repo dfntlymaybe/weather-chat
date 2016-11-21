@@ -1,0 +1,13 @@
+.weather-frame{
+  border: 2px solid #DBDBDB;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #DBDBDB;
+  margin: 10px;
+}
+i{
+  color: red;
+}
+
+.navbar{
+  border-radius: 0;
+}
